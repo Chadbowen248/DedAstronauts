@@ -6,18 +6,15 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>Next.js Starter!</title>
+        <title>DedAstronauts</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <Header title="Welcome to my app!" />
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
+        <Header title="DedAstronauts" />
+        <p className="description">Future home of DedAstronauts!!!</p>
+        <img src='/preview.gif' style={{width: "50%"}}></img>
       </main>
-
-      <Footer />
     </div>
   )
 }
