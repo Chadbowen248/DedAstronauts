@@ -5,15 +5,15 @@ import { useState } from 'react'
 
 
 export default function Home() {
-  const [astronautData, setAstronautData] = useState()
-  const getDisplayQRcode = async () => {
-    const url = "/test"
-    const response = await fetch(url)
-    const {results} = await response.json();
-    setAstronautData(results)
-    console.log(astronautData)
+  // const [data, setAstronautData] = useState()
+  // const getDisplayQRcode = async () => {
+  //   const url = "/.netlify/functions/test"
+  //   const response = await fetch(url)
+  //   const data = await response.json();
+  //   setAstronautData(data)
+  //   console.log(data)
     
-  }
+  // }
   return (
     <div className="container">
       <Head>
@@ -24,8 +24,9 @@ export default function Home() {
       <main>
         <Header title="DedAstronauts" />
         <p className="description">Future home of DedAstronauts!!!</p>
-        <img src='/preview.gif' style={{width: "50%"}}></img>
-        <button onClick={() => getDisplayQRcode()}>Get Purchanse QR Code</button>
+        <img src='/preview.gif' style={{width: "70%"}}></img>
+        <img src='/requestXRP.png' id="QRcode" style={{width: "50%"}}></img>
+        {/* <button onClick={() => getDisplayQRcode()}>Get Purchanse QR Code</button> */}
       </main>
     </div>
   )

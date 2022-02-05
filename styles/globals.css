@@ -1,6 +1,7 @@
 html,
 body {
   padding: 0;
+  background-color: black;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
     Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -17,6 +18,10 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+#QRcode {
+  margin-top: 100px;
 }
 
 code {
