@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Header from '@components/Header'
 import { w3cwebsocket as W3CWebSocket } from "websocket";
 import { useState, useEffect } from 'react'
 
@@ -33,17 +32,17 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
+      <link rel="stylesheet" href="https://use.typekit.net/mng4blu.css"></link>
         <title>DedAstronauts</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <Header title="DedAstronauts" />
+        <h1>Ded Astronauts</h1>
         <h2 className="description">Future home of DedAstronauts!!!</h2>
         <p>{status.message}</p>
         {status.opened && <span>You have scanned the QR code with Xumm.</span>}
         <img src='/preview.gif' style={{width: "70%"}}></img>
-        <button onClick={() => getDisplayQRcode()}>Get Purchanse QR Code</button>
+        <button onClick={() => getDisplayQRcode()}>Get XUMM QR Code</button>
         <img src={data?.refs?.qr_png} id="QRcode" style={{width: "50%"}}></img>
       </main>
     </div>
