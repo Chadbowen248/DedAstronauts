@@ -1,12 +1,16 @@
 import Head from 'next/head'
 import { w3cwebsocket as W3CWebSocket } from "websocket";
 import { useState, useEffect } from 'react'
+import Modal from "react-modal";
+
 
 
 
 export default function Home() {
   const [data, setAstronautData] = useState()
   const [status, setStatus] = useState({})
+  const [modalIsOpen, setIsOpen] = useState(false);
+
   
   useEffect(() => {
     if (data?.uuid) {
@@ -26,7 +30,8 @@ export default function Home() {
     const url = "/.netlify/functions/test"
     const response = await fetch(url)
     const data = await response.json();
-     setAstronautData(data)    
+     setAstronautData(data) 
+     setIsOpen(true)   
   }
 
   return (
@@ -43,7 +48,24 @@ export default function Home() {
         {status.opened && <span>You have scanned the QR code with Xumm.</span>}
         <img src='/preview.gif' style={{width: "70%"}}></img>
         <button onClick={() => getDisplayQRcode()}>Get XUMM QR Code</button>
-        <img src={data?.refs?.qr_png} id="QRcode" style={{width: "50%"}}></img>
+        <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={() => setIsOpen(false)}
+        overlayClassName={{
+          base: "overlay-base",
+          afterOpen: "overlay-after",
+          beforeClose: "overlay-before"
+        }}
+        className={{
+          base: "content-base",
+          afterOpen: "content-after",
+          beforeClose: "content-before"
+        }}
+        closeTimeoutMS={500}
+      >
+        <img src={data?.refs?.qr_png} id="QRcode"></img>
+        <button onClick={() => setIsOpen(false)}>Close Modal</button>
+      </Modal>
       </main>
     </div>
   )
