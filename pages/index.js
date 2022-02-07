@@ -8,6 +8,7 @@ import Modal from "react-modal";
 
 export default function Home() {
   const [data, setAstronautData] = useState()
+  const [mint, setMint] = useState()
   const [status, setStatus] = useState({})
   const [modalIsOpen, setIsOpen] = useState(false);
 
@@ -39,6 +40,14 @@ export default function Home() {
      setIsOpen(true)   
   }
 
+  const mintNFT = async () => {
+    const url = "/.netlify/functions/mint"
+    const response = await fetch(url)
+    const data = await response.json();
+    setMint(data) 
+    alert("Mint stuff will happen now, no clue rn")
+  }
+
   return (
     <div className="container">
       <Head>
@@ -49,15 +58,18 @@ export default function Home() {
       <main>
 
         <h1>Ded Astronauts</h1>
-        <h2>0/10,000 minted</h2>
+        <h2>{`${mint?.numberMinted || 0 }/10,000 minted`}</h2>
         <div className='preview-container'>
         <img src='/preview.gif' style={{width: "70%"}}></img>
-        <button onClick={() => getDisplayQRcode()}>Get XUMM QR Code</button>
+        {(status.signed === undefined || status.signed === false )&& <button onClick={() => getDisplayQRcode()}>Get XUMM QR Code</button>}
+        {status.signed === true  && <button onClick={() => mintNFT()}>Mint</button>}
+
+
         </div>
         {status.opened && <h3 className='verified'>REVIEW AND SIGN WITH XUMM</h3>}
         {status.signed === false && <h3 className='declined'>SIGN DECLINED</h3>}
           {/* add another && here after also verify on ledger */}
-        {status.signed && <h3 className='verified'>SIGN VERIFIED</h3>} 
+        {status.signed && <h3 className='verified'>SIGN VERIFIED - READY TO MINT</h3>} 
         {Modal.setAppElement('#__next')}
         <Modal
         isOpen={modalIsOpen}
