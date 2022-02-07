@@ -48,6 +48,7 @@ export default function Home() {
 
       <main>
         <h1>Ded Astronauts</h1>
+        <h2>0/10,000 minted</h2>
         <h2 className="description">Future home of DedAstronauts!!!</h2>
         <p>{status.message}</p>
         {status.opened && <span>You have scanned the QR code with Xumm.</span>}
