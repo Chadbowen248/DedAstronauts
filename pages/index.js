@@ -47,14 +47,17 @@ export default function Home() {
       </Head>
 
       <main>
+
         <h1>Ded Astronauts</h1>
         <h2>0/10,000 minted</h2>
+        <div className='preview-container'>
         <img src='/preview.gif' style={{width: "70%"}}></img>
+        <button onClick={() => getDisplayQRcode()}>Get XUMM QR Code</button>
+        </div>
         {status.opened && <h3 className='verified'>REVIEW AND SIGN WITH XUMM</h3>}
         {status.signed === false && <h3 className='declined'>SIGN DECLINED</h3>}
           {/* add another && here after also verify on ledger */}
         {status.signed && <h3 className='verified'>SIGN VERIFIED</h3>} 
-        <button onClick={() => getDisplayQRcode()}>Get XUMM QR Code</button>
         {Modal.setAppElement('#__next')}
         <Modal
         isOpen={modalIsOpen}
