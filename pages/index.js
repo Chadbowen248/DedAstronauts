@@ -49,13 +49,11 @@ export default function Home() {
       <main>
         <h1>Ded Astronauts</h1>
         <h2>0/10,000 minted</h2>
-        <h2 className="description">Future home of DedAstronauts!!!</h2>
-        <p>{status.message}</p>
-        {status.opened && <span>You have scanned the QR code with Xumm.</span>}
-        {status.signed === false && <span>You declined ;( </span>}
-          {/* add another && here after also verify on ledger */}
-        {status.signed && <span>Transaction Verified! </span>} 
         <img src='/preview.gif' style={{width: "70%"}}></img>
+        {status.opened && <h3 className='verified'>REVIEW AND SIGN WITH XUMM</h3>}
+        {status.signed === false && <h3 className='declined'>SIGN DECLINED</h3>}
+          {/* add another && here after also verify on ledger */}
+        {status.signed && <h3 className='verified'>SIGN VERIFIED</h3>} 
         <button onClick={() => getDisplayQRcode()}>Get XUMM QR Code</button>
         {Modal.setAppElement('#__next')}
         <Modal
