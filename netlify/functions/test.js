@@ -5,7 +5,7 @@ exports.handler = async function () {
   const request = {
     "TransactionType": "Payment",
     "Destination": "rKJYFcS28vZW4X17SVzbCeiLN7PaWfSukX",
-    "Amount": "50000000"
+    "Amount": "10000"
   }
   const payload = await Sdk.payload.create(request, true)
 

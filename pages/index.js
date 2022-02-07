@@ -17,14 +17,19 @@ export default function Home() {
       const client = new W3CWebSocket(`${data?.refs?.websocket_status}`);
       client.onmessage = ({data}) => {
         const obj = JSON.parse(data)
-        const key = Object.keys(obj)[0]
-        setStatus(status => ({
-          ...status,
-          [key]: obj[key]
-        }))
+        const keyCheck = obj.hasOwnProperty("expires_in_seconds")
+        if (!keyCheck) {
+          setStatus(obj)
+        }
       };
     }
   }, [data]);
+
+  useEffect(() => {
+    if(status.opened) {
+      setIsOpen(false)
+    }
+  },[status])
 
   const getDisplayQRcode = async () => {
     const url = "/.netlify/functions/test"
@@ -46,8 +51,12 @@ export default function Home() {
         <h2 className="description">Future home of DedAstronauts!!!</h2>
         <p>{status.message}</p>
         {status.opened && <span>You have scanned the QR code with Xumm.</span>}
+        {status.signed === false && <span>You declined ;( </span>}
+          {/* add another && here after also verify on ledger */}
+        {status.signed && <span>Transaction Verified! </span>} 
         <img src='/preview.gif' style={{width: "70%"}}></img>
         <button onClick={() => getDisplayQRcode()}>Get XUMM QR Code</button>
+        {Modal.setAppElement('#__next')}
         <Modal
         isOpen={modalIsOpen}
         onRequestClose={() => setIsOpen(false)}
@@ -63,8 +72,13 @@ export default function Home() {
         }}
         closeTimeoutMS={500}
       >
+        <div className='info-modal'>
         <img src={data?.refs?.qr_png} id="QRcode"></img>
-        <button onClick={() => setIsOpen(false)}>Close Modal</button>
+        
+        <p>Scan this code with the Xumm app to sign the transaction.</p>
+        <p>Amount: 50 XRP</p>
+
+        </div>
       </Modal>
       </main>
     </div>
