@@ -1,52 +1,23 @@
+import Link from 'next/link'
 import Head from 'next/head'
-import { w3cwebsocket as W3CWebSocket } from "websocket";
-import { useState, useEffect } from 'react'
-import Modal from "react-modal";
+import { useState } from 'react'
+
 
 
 
 
 export default function Home() {
-  const [data, setAstronautData] = useState()
-  const [mint, setMint] = useState()
-  const [status, setStatus] = useState({})
-  const [modalIsOpen, setIsOpen] = useState(false);
+  const [agreeStatus, setAgreeStatus] = useState()
 
-  
-  useEffect(() => {
-    if (data?.uuid) {
-      const client = new W3CWebSocket(`${data?.refs?.websocket_status}`);
-      client.onmessage = ({data}) => {
-        const obj = JSON.parse(data)
-        const keyCheck = obj.hasOwnProperty("expires_in_seconds")
-        if (!keyCheck) {
-          setStatus(obj)
-        }
-      };
+  const handleCheck = (e) => {
+    const state = e.target.checked;
+    if(state) {
+      setAgreeStatus(true)
+    } else {
+      setAgreeStatus(false)
     }
-  }, [data]);
-
-  useEffect(() => {
-    if(status.opened) {
-      setIsOpen(false)
-    }
-  },[status])
-
-  const getDisplayQRcode = async () => {
-    const url = "/.netlify/functions/test"
-    const response = await fetch(url)
-    const data = await response.json();
-     setAstronautData(data) 
-     setIsOpen(true)   
-  }
-
-  const mintNFT = async () => {
-    const url = "/.netlify/functions/mint"
-    const response = await fetch(url)
-    const data = await response.json();
-    setMint(data) 
-    alert("Mint stuff will happen now, no clue rn")
-  }
+   
+   }
 
   return (
     <div className="container">
@@ -54,46 +25,31 @@ export default function Home() {
       <link rel="stylesheet" href="https://use.typekit.net/mng4blu.css"></link>
         <title>DedAstronauts</title>
       </Head>
-
       <main>
-
         <h1>Ded Astronauts</h1>
-        <h2>{`${mint?.numberMinted || 0 }/10,000 minted`}</h2>
-        <div className='preview-container'>
-        <img src='/preview.gif' style={{width: "70%"}}></img>
-        {(status.signed === undefined || status.signed === false )&& <button onClick={() => getDisplayQRcode()}>Get XUMM QR Code</button>}
-        {status.signed === true  && <button onClick={() => mintNFT()}>Mint</button>}
-
-
+        <div className='howThisWorks'>
+          <h2>How this works:</h2>
+          <ul>
+            <li>If you don't already have a XUMM account, download from the App or Play store and follow the registration process. Please note you will need at least 10 XRP to activate your account. For more info please see <a href="#">Xumm</a></li>
+            <li>Sign a request sending 50 XRP to the DedAstronaut wallet by clicking on the "Get Xumm QR code" button and scanning the code with the Xumm app.</li>
+            <li>Review and approve the request on the Xumm app.</li>
+            <li>You can now mint a unique Ded Astronauts NFT to your xrpl address by clicking on the "Mint" button and scanning the QR code with Xumm.</li>
+          </ul>
+          <h2>Warnings:</h2>
+          <ul>
+            <li>Not resposible for loss of XRP. It's not like I can steal your XRP though, if something happens to go wrong and you're not able to mint message @DedAstronauts and we'll figure something out. I won't just take your XRP.</li>
+            <li>Don't leave the page in the middle of the process, if you've sent your XRP, don't fuck off and do something else, not sure how to help.</li>
+            <li>I realize the above sucks and is bad UX, but I'm just one person. Sorry.</li>
+            <li>Full discloure, I've minted 500 of these ones because I can and they're rad.</li>
+          </ul>
         </div>
-        {status.opened && <h3 className='verified'>REVIEW AND SIGN WITH XUMM</h3>}
-        {status.signed === false && <h3 className='declined'>SIGN DECLINED</h3>}
-          {/* add another && here after also verify on ledger */}
-        {status.signed && <h3 className='verified'>SIGN VERIFIED - READY TO MINT</h3>} 
-        {Modal.setAppElement('#__next')}
-        <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={() => setIsOpen(false)}
-        overlayClassName={{
-          base: "overlay-base",
-          afterOpen: "overlay-after",
-          beforeClose: "overlay-before"
-        }}
-        className={{
-          base: "content-base",
-          afterOpen: "content-after",
-          beforeClose: "content-before"
-        }}
-        closeTimeoutMS={500}
-      >
-        <div className='info-modal'>
-        <img src={data?.refs?.qr_png} id="QRcode"></img>
-        
-        <p>Scan this code with the Xumm app to sign the transaction.</p>
-        <p>Amount: 50 XRP</p>
-
+        <div>
+        <label htmlFor="poop">Check here to acknowledge that you've read and understand the above.</label>
+        <input type="checkbox" name='poop' onChange={(e) => handleCheck(e)}></input>
         </div>
-      </Modal>
+        {agreeStatus && <Link href="/ded"> 
+          <a className='next-link'>Next</a> 
+        </Link>}
       </main>
     </div>
   )
