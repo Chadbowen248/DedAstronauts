@@ -120,6 +120,17 @@ h3 {
   padding: 25px;
 }
 
+.status-container {
+  position: relative;
+}
+
+.status-container a {
+  color: white;
+  position: absolute;
+  text-decoration: none;
+  bottom: 5px;
+}
+
 .info-modal {
   padding: 10px;
 }
