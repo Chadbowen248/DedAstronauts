@@ -33,6 +33,10 @@ img {
   align-items: center;
 }
 
+.ded {
+  font-size: clamp(32px, 5vw, 80px);
+}
+
 .overlay-after, .xoverlay-after {
   background-color: rgba(0, 0, 0, 0.8);
   opacity: 1;

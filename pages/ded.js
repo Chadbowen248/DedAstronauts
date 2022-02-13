@@ -14,7 +14,7 @@ export default function DedAstronaut() {
 
   useEffect(() => {
     getMintNumber()
-  }, [availableMintNumber])
+  }, [])
 
   useEffect(() => {
     if (data?.uuid) {
@@ -81,6 +81,7 @@ export default function DedAstronaut() {
     setVerified(data);
     if (status?.signed) {
       xsetIsOpen(true);
+      getMintNumber()
     }
     console.log("heres the validation", data);
   };
@@ -96,7 +97,7 @@ export default function DedAstronaut() {
       </Head>
 
       <main>
-        <h1>Ded Astronauts</h1>
+        <h1 className="ded">Ded Astronauts</h1>
         <h2>{`${(8888 - availableMintNumber) || 0}/8,888 minted`}</h2>
         {status.opened && !verified?.verifiedPayload?.hash && (
           <h3 className="verified">REVIEW AND SIGN WITH XUMM</h3>
