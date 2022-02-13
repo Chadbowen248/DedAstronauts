@@ -6,11 +6,15 @@ import Head from "next/head";
 export default function DedAstronaut() {
   const [data, setAstronautData] = useState();
   const [userNFT, setUserNFT] = useState();
-  const [mint, setMint] = useState();
+  const [availableMintNumber, setMintNumber] = useState();
   const [verified, setVerified] = useState();
   const [status, setStatus] = useState({});
   const [modalIsOpen, setIsOpen] = useState(false);
   const [xmodalIsOpen, xsetIsOpen] = useState(false);
+
+  useEffect(() => {
+    getMintNumber()
+  }, [availableMintNumber])
 
   useEffect(() => {
     if (data?.uuid) {
@@ -38,6 +42,13 @@ export default function DedAstronaut() {
       setIsOpen(false);
     }
   }, [status]);
+
+  const getMintNumber = async () => {
+    const url = "/.netlify/functions/getMintNumberAvailable";
+    const response = await fetch(url);
+    const data = await response.json();
+    setMintNumber(data.numberMinted)
+  }
 
   const mintDedAstronaut = async () => {
     const url = "/.netlify/functions/test";
@@ -86,7 +97,7 @@ export default function DedAstronaut() {
 
       <main>
         <h1>Ded Astronauts</h1>
-        <h2>{`50${mint?.numberMinted || 0}/10,000 minted`}</h2>
+        <h2>{`${(8888 - availableMintNumber) || 0}/8,888 minted`}</h2>
         {status.opened && !verified?.verifiedPayload?.hash && (
           <h3 className="verified">REVIEW AND SIGN WITH XUMM</h3>
         )}
