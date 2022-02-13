@@ -1,0 +1,4852 @@
+<html>
+<head>
+<script src='https://unpkg.com/xrpl@2.1.0-beta.1'></script>
+<script>
+if (typeof module !== "undefined") var xrpl = require('xrpl')
+
+//***************************
+//** Mint Token *************
+//***************************
+
+
+
+const mintTokens = async () => {
+    // this will come from the json on ipfs://
+    const data = [
+{
+  name: "DedAstronauts #42",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/42.png",
+  dna: "8ecc5a068a30f1dbc7248d8ae4ab0809e7ee7c09",
+  edition: 42,
+  date: 1643449552271,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Blue",
+    },
+    {
+      trait_type: "Cables",
+      value: "Pink",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Pink",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #15",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/15.png",
+  dna: "ebf622d82db2a0727d52e81818d442fa90e47c18",
+  edition: 15,
+  date: 1643449552327,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Pink",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Blue",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #51",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/51.png",
+  dna: "f1eac1cf1dfa55f86d9ae016b661aa23f7f44e1a",
+  edition: 51,
+  date: 1643449552375,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Common",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Pink",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #50",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/50.png",
+  dna: "f4fde287e5cca52f628cffaa0503d4f5489c2b9b",
+  edition: 50,
+  date: 1643449552422,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Blue",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Common",
+    },
+    {
+      trait_type: "Cables",
+      value: "Pink",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #5",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/5.png",
+  dna: "2e26301371353ded96b490825f268098f50fc495",
+  edition: 5,
+  date: 1643449552468,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "rare",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Blue",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "rare",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #98",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/98.png",
+  dna: "395b9c1d04d216c78a8e5d460f214628675f3808",
+  edition: 98,
+  date: 1643449552519,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Rare",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #32",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/32.png",
+  dna: "3a3488b8de5e1bc7d6d09edc8d33a16d034d17d7",
+  edition: 32,
+  date: 1643449552569,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Pink",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Pink",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Blue",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #63",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/63.png",
+  dna: "351bc932ec4fb6c3f6d0f525a1923a9a7ef36146",
+  edition: 63,
+  date: 1643449552616,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Blue",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Common",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Blue",
+    },
+    {
+      trait_type: "Visor",
+      value: "Pink",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #47",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/47.png",
+  dna: "6bc4209e9e4c44e04e9bcd76f933bc2b85f33271",
+  edition: 47,
+  date: 1643449552663,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Blue",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Blue",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #61",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/61.png",
+  dna: "b56aab2771685cf395d8162d6e2deb8918b44e4f",
+  edition: 61,
+  date: 1643449552713,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Common",
+    },
+    {
+      trait_type: "Cables",
+      value: "Pink",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Rare",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #65",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/65.png",
+  dna: "d97f6ec4271bb9107d73771d14fab7089e7ac602",
+  edition: 65,
+  date: 1643449552766,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Blue",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Pink",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Pink",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #72",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/72.png",
+  dna: "759d95bd056a383860980f6b5fc4c28ebea1cc26",
+  edition: 72,
+  date: 1643449552815,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Pink",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Blue",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #90",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/90.png",
+  dna: "394df123e2a6b0fce071df3ca6ab49a2f03d634f",
+  edition: 90,
+  date: 1643449552866,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Blue",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #59",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/59.png",
+  dna: "c2f6ed0441a25c48ccb54d190c827a8be2b74255",
+  edition: 59,
+  date: 1643449552914,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Cables",
+      value: "Pink",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Visor",
+      value: "Pink",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #96",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/96.png",
+  dna: "a0d50e15b55a4654a18dd58720bfeaf8f79e9a76",
+  edition: 96,
+  date: 1643449552961,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Blue",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Common",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Pink",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #60",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/60.png",
+  dna: "1058670b9f9bf05c8ffaba9a563cfbb830393957",
+  edition: 60,
+  date: 1643449553009,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Blue",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Pink",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Blue",
+    },
+    {
+      trait_type: "Visor",
+      value: "Pink",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #11",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/11.png",
+  dna: "14368833b81b00ac7f8fbcf8f201412e03673bbc",
+  edition: 11,
+  date: 1643449553053,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Pink",
+    },
+    {
+      trait_type: "Cables",
+      value: "Pink",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Rare",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #8",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/8.png",
+  dna: "07879f76802a19a765e862cdc5a73375d0b98354",
+  edition: 8,
+  date: 1643449553105,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #79",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/79.png",
+  dna: "a6ab4b832341590d9364edb8a7d61f9fd5e2ddf2",
+  edition: 79,
+  date: 1643449553150,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Blue",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Pink",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Blue",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #74",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/74.png",
+  dna: "71338a2689d54d6ce83537c377035fb01fd4425b",
+  edition: 74,
+  date: 1643449553194,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Blue",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Cables",
+      value: "Pink",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Blue",
+    },
+    {
+      trait_type: "Visor",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "rare",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #69",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/69.png",
+  dna: "0806e50d032174a3c34e25f3f1b05e1b7dc3c073",
+  edition: 69,
+  date: 1643449553248,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Blue",
+    },
+    {
+      trait_type: "Visor",
+      value: "Pink",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #80",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/80.png",
+  dna: "712a11ceb5aeff64e11ae36802ecbad53a16b737",
+  edition: 80,
+  date: 1643449553294,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Pink",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Pink",
+    },
+    {
+      trait_type: "Visor",
+      value: "Pink",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #23",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/23.png",
+  dna: "d628de7f12bfb5bbc3b50c4643f8a46c3909f64d",
+  edition: 23,
+  date: 1643449553337,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Blue",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Common",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Blue",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #35",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/35.png",
+  dna: "f3bc13e7ca4367c765bd1383dd31635dbc88440a",
+  edition: 35,
+  date: 1643449553381,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Pink",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Blue",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Blue",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #19",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/19.png",
+  dna: "fdf2c94789cf15d7e2c9c582617c7cafbe8aa04c",
+  edition: 19,
+  date: 1643449553425,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Common",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Blue",
+    },
+    {
+      trait_type: "Visor",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #38",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/38.png",
+  dna: "3bc21b98bce7f303234a3f5fcd84af8e803ab089",
+  edition: 38,
+  date: 1643449553470,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Blue",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Blue",
+    },
+    {
+      trait_type: "Cables",
+      value: "Pink",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #54",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/54.png",
+  dna: "8cfdcb0300cfc9adacccff9631516c34dab487a2",
+  edition: 54,
+  date: 1643449553513,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Blue",
+    },
+    {
+      trait_type: "Cables",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Blue",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #16",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/16.png",
+  dna: "4b2fa7ae76962e13506b7c450d7532504b6e8a4f",
+  edition: 16,
+  date: 1643449553556,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Pink",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Common",
+    },
+    {
+      trait_type: "Cables",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Pink",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #14",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/14.png",
+  dna: "0f275bee89ee61a5f44309807e646862ad781a90",
+  edition: 14,
+  date: 1643449553602,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Pink",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Common",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Blue",
+    },
+    {
+      trait_type: "Visor",
+      value: "Pink",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #95",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/95.png",
+  dna: "1de5d075c8d85937fc7c57d3d61e31fe72e0033a",
+  edition: 95,
+  date: 1643449553651,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Blue",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Blue",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "rare",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #36",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/36.png",
+  dna: "e04d42e5aba98b8c4f7668ec9286ed7b85aa2114",
+  edition: 36,
+  date: 1643449553695,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Common",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Blue",
+    },
+    {
+      trait_type: "Visor",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "rare",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #25",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/25.png",
+  dna: "f63e71e448a338c58748df4de750a222271b4735",
+  edition: 25,
+  date: 1643449553738,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Common",
+    },
+    {
+      trait_type: "Cables",
+      value: "Pink",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Pink",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "rare",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #70",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/70.png",
+  dna: "a5b6ae6f9819b0bf498f87228d20ae74fcf676e3",
+  edition: 70,
+  date: 1643449553785,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Blue",
+    },
+    {
+      trait_type: "Cables",
+      value: "Pink",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Blue",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #100",
+  description: "They ded",
+  image:
+    "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/100.png",
+  dna: "53440f9165289b0f8697adcc80998526145c62ff",
+  edition: 100,
+  date: 1643449553832,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Blue",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #7",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/7.png",
+  dna: "4ced89ae1e3eea11b3a5cac76ad503076848e2d9",
+  edition: 7,
+  date: 1643449553879,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Blue",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Cables",
+      value: "Pink",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Blue",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #45",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/45.png",
+  dna: "21c287738b593d4741edab56899b9ccf708b7d74",
+  edition: 45,
+  date: 1643449553926,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Cables",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #22",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/22.png",
+  dna: "f3f062d5b5b15ceaaecc6ba5fc34ebd1f03b5d0e",
+  edition: 22,
+  date: 1643449553972,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Common",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Pink",
+    },
+    {
+      trait_type: "Visor",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #44",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/44.png",
+  dna: "b8b804672777fa72201abbf25c277bfb78d867da",
+  edition: 44,
+  date: 1643449554015,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Blue",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Common",
+    },
+    {
+      trait_type: "Cables",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Blue",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #55",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/55.png",
+  dna: "178b23a77d58d72c3907b6bbe1cda11139d32f78",
+  edition: 55,
+  date: 1643449554058,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Blue",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Blue",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #68",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/68.png",
+  dna: "8ce6f3a1d5ec4b7322ecb644567faea9bda2ed10",
+  edition: 68,
+  date: 1643449554102,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Pink",
+    },
+    {
+      trait_type: "Cables",
+      value: "Pink",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Blue",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #92",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/92.png",
+  dna: "2feb377e0e7b5a32155b995c6997546cb13e98aa",
+  edition: 92,
+  date: 1643449554146,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Common",
+    },
+    {
+      trait_type: "Cables",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Blue",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #93",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/93.png",
+  dna: "6b80bc1223d2d176e3b602a67223062e8fad6f2d",
+  edition: 93,
+  date: 1643449554191,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Common",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Rare",
+    },
+    {
+      trait_type: "Visor",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "rare",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #37",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/37.png",
+  dna: "a55ee7fcb6161f777c00ecbfe3100561f5350b33",
+  edition: 37,
+  date: 1643449554237,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Blue",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Blue",
+    },
+    {
+      trait_type: "Cables",
+      value: "Pink",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Pink",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #33",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/33.png",
+  dna: "bee045821c01de9a9e6c5e65b73f4246d07182df",
+  edition: 33,
+  date: 1643449554286,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Pink",
+    },
+    {
+      trait_type: "Cables",
+      value: "Pink",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Visor",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "rare",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #67",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/67.png",
+  dna: "46246fc750cb6657a638cffedcf621f0d0414025",
+  edition: 67,
+  date: 1643449554330,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Blue",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Pink",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Visor",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #13",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/13.png",
+  dna: "09447f686128dfea1d2a71e82d26f056b2c7deaa",
+  edition: 13,
+  date: 1643449554377,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Blue",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Common",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Blue",
+    },
+    {
+      trait_type: "Visor",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "rare",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #49",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/49.png",
+  dna: "9a4c02d287f1b3840bcf0661f692ee6a1202cff7",
+  edition: 49,
+  date: 1643449554426,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Pink",
+    },
+    {
+      trait_type: "Cables",
+      value: "Pink",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Pink",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #75",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/75.png",
+  dna: "b7ebc921422331274f22158b6a97136f454f22cd",
+  edition: 75,
+  date: 1643449554473,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Blue",
+    },
+    {
+      trait_type: "Visor",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "rare",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #86",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/86.png",
+  dna: "0855c2bfcfa86f6065b33f6a209b0dfffdb2059b",
+  edition: 86,
+  date: 1643449554520,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Pink",
+    },
+    {
+      trait_type: "Cables",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Pink",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #4",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/4.png",
+  dna: "411238b5c60114c186341b4ae1b70453cfefe91e",
+  edition: 4,
+  date: 1643449554565,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Common",
+    },
+    {
+      trait_type: "Cables",
+      value: "Pink",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Blue",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #81",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/81.png",
+  dna: "d081bf9d80624459c0b0fe973544ac1934c34eab",
+  edition: 81,
+  date: 1643449554607,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Pink",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Blue",
+    },
+    {
+      trait_type: "Visor",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #43",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/43.png",
+  dna: "d5cb11da3ec630370bbd76b83329e05bf54a2afb",
+  edition: 43,
+  date: 1643449554651,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Pink",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Rare",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #10",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/10.png",
+  dna: "84349572dd5de3d690d336d4233a5459c5dbc621",
+  edition: 10,
+  date: 1643449554694,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Blue",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Common",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #20",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/20.png",
+  dna: "83cab8e8297c044d306f380745003828c1a6ad31",
+  edition: 20,
+  date: 1643449554736,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Pink",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "rare",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #89",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/89.png",
+  dna: "7f5faed61b96bbdb085fac55b439a8bb403eebdd",
+  edition: 89,
+  date: 1643449554780,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Blue",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Pink",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Rare",
+    },
+    {
+      trait_type: "Visor",
+      value: "Pink",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #57",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/57.png",
+  dna: "d6bf65555388075cd20c9e70460566beb33ec758",
+  edition: 57,
+  date: 1643449554822,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Pink",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Cables",
+      value: "Pink",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Pink",
+    },
+    {
+      trait_type: "Visor",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #77",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/77.png",
+  dna: "9ae9120db745d7e0f1ab92db728030051c74ce3b",
+  edition: 77,
+  date: 1643449554869,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Blue",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Pink",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #84",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/84.png",
+  dna: "a0febcc4022dfbabcaf5f1ea0334fe37c233dad5",
+  edition: 84,
+  date: 1643449554914,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Cables",
+      value: "Pink",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Pink",
+    },
+    {
+      trait_type: "Visor",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #48",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/48.png",
+  dna: "0e51742efa3bd7960db373c4de82b4dd922b1fa5",
+  edition: 48,
+  date: 1643449554957,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Blue",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Blue",
+    },
+    {
+      trait_type: "Cables",
+      value: "Pink",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "rare",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #83",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/83.png",
+  dna: "2b326dd87815dae526fa470f163d85e9a29848f0",
+  edition: 83,
+  date: 1643449555003,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Blue",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Common",
+    },
+    {
+      trait_type: "Cables",
+      value: "Pink",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Pink",
+    },
+    {
+      trait_type: "Visor",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #28",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/28.png",
+  dna: "24948359c8a6fdee02cc20d54f7c2ad86f24c49f",
+  edition: 28,
+  date: 1643449555047,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Blue",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #21",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/21.png",
+  dna: "e7121060b898369d8fdde7a0364434a425b5959a",
+  edition: 21,
+  date: 1643449555091,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Blue",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Cables",
+      value: "Pink",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Blue",
+    },
+    {
+      trait_type: "Visor",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #56",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/56.png",
+  dna: "0bd3b60d75a8ec3cea71ec867460ae98ebd6d0f6",
+  edition: 56,
+  date: 1643449555138,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Blue",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Blue",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Pink",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #73",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/73.png",
+  dna: "e60e5751bfd61b6177e17f4a32dc9461abc10b95",
+  edition: 73,
+  date: 1643449555187,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Blue",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Pink",
+    },
+    {
+      trait_type: "Cables",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Pink",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #41",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/41.png",
+  dna: "597c759ff366daa2a64592f6c506a7cb0fd7a35c",
+  edition: 41,
+  date: 1643449555229,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Pink",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Blue",
+    },
+    {
+      trait_type: "Cables",
+      value: "Pink",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Pink",
+    },
+    {
+      trait_type: "Visor",
+      value: "Pink",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #99",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/99.png",
+  dna: "a53017dbfa851937a8be93d40dc57009c5fea8d3",
+  edition: 99,
+  date: 1643449555273,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Common",
+    },
+    {
+      trait_type: "Cables",
+      value: "Pink",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Visor",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #40",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/40.png",
+  dna: "169d1dd6c2b6d749f1cd500e32198d34e3e9b3b1",
+  edition: 40,
+  date: 1643449555318,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Blue",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Common",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Visor",
+      value: "Pink",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #46",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/46.png",
+  dna: "64da3858329b3b3b908afd022011e5a160ab42ab",
+  edition: 46,
+  date: 1643449555360,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Pink",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #91",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/91.png",
+  dna: "e9d0ff3cf526b13234aec8747a59660eac171cf8",
+  edition: 91,
+  date: 1643449555403,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Pink",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Pink",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #66",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/66.png",
+  dna: "382403ad6b821c7b297f50c5b2156e6a336e2282",
+  edition: 66,
+  date: 1643449555445,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Pink",
+    },
+    {
+      trait_type: "Cables",
+      value: "Pink",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #82",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/82.png",
+  dna: "c941ac0d7238a7082217933350b59b84982164e3",
+  edition: 82,
+  date: 1643449555492,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Cables",
+      value: "Pink",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Rare",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #39",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/39.png",
+  dna: "74b8e1494c7aa25a98cf919fda08aa6a8a369d6d",
+  edition: 39,
+  date: 1643449555538,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Blue",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Pink",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #64",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/64.png",
+  dna: "2199c311ff0b472808f744961ff8b627317e3729",
+  edition: 64,
+  date: 1643449555581,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Pink",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Pink",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #30",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/30.png",
+  dna: "69a849d0e719805c8d45f2f463d666bf421c5127",
+  edition: 30,
+  date: 1643449555624,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Blue",
+    },
+    {
+      trait_type: "Cables",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Blue",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "rare",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #3",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/3.png",
+  dna: "9d1c1c4a58db7c1c2aa2f320e45f394082a4929a",
+  edition: 3,
+  date: 1643449555668,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Blue",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Blue",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Rare",
+    },
+    {
+      trait_type: "Visor",
+      value: "Pink",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #29",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/29.png",
+  dna: "55ea1c4bc8833c86512d8720ef900150a98fd71d",
+  edition: 29,
+  date: 1643449555711,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Common",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #97",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/97.png",
+  dna: "bed1ad03a3641f240debbd5fec6602c870f29c72",
+  edition: 97,
+  date: 1643449555757,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Blue",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Blue",
+    },
+    {
+      trait_type: "Cables",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Pink",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #94",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/94.png",
+  dna: "9452f90272f8e487b70d798b63446bdf71b01f74",
+  edition: 94,
+  date: 1643449555804,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Blue",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Common",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Visor",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #88",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/88.png",
+  dna: "8af77783b990918fb692c74029c7b70087c1e028",
+  edition: 88,
+  date: 1643449555846,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Cables",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Pink",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "rare",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #27",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/27.png",
+  dna: "9b93d8f8c6b942b30cb79fcb6717d6b40f1d5039",
+  edition: 27,
+  date: 1643449555889,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Cables",
+      value: "Pink",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Blue",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #26",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/26.png",
+  dna: "286b2a80662fb4eca1e322af45fc538b324bde14",
+  edition: 26,
+  date: 1643449555933,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Blue",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Common",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Blue",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "rare",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #1",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/1.png",
+  dna: "074eaccd5f8c8321d383fedcc225afc82848933f",
+  edition: 1,
+  date: 1643449555977,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Pink",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Common",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #12",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/12.png",
+  dna: "2fc4962856ea407dbc1c7677c9a077e8f82f6313",
+  edition: 12,
+  date: 1643449556019,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Cables",
+      value: "Pink",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Visor",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #31",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/31.png",
+  dna: "e3d8cd44994d07f12dd34dc288b34e38c4059b73",
+  edition: 31,
+  date: 1643449556062,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Common",
+    },
+    {
+      trait_type: "Cables",
+      value: "Pink",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Blue",
+    },
+    {
+      trait_type: "Visor",
+      value: "Pink",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #85",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/85.png",
+  dna: "95b922785c2a01abf25d17c36fae6578f0d70550",
+  edition: 85,
+  date: 1643449556106,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Pink",
+    },
+    {
+      trait_type: "Visor",
+      value: "Pink",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "rare",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #2",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/2.png",
+  dna: "b8e26e8b9a64b7c8fb7027508ef3cb72269a5ce1",
+  edition: 2,
+  date: 1643449556152,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Pink",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Blue",
+    },
+    {
+      trait_type: "Cables",
+      value: "Pink",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Pink",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #52",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/52.png",
+  dna: "10d2a566d13bb725449f84a0641156df9b57ac0d",
+  edition: 52,
+  date: 1643449556195,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Blue",
+    },
+    {
+      trait_type: "Cables",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Pink",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #58",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/58.png",
+  dna: "934dead41f31d467b47488404873e2519ea2d1c6",
+  edition: 58,
+  date: 1643449556239,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Common",
+    },
+    {
+      trait_type: "Cables",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #53",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/53.png",
+  dna: "1acd0020a3278ada73aa3430367e1bcd9c6e59a2",
+  edition: 53,
+  date: 1643449556283,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Blue",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "rare",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Blue",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "rare",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #6",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/6.png",
+  dna: "cdb5dfd95fa452ec8da34d1e6c52e035fffdc124",
+  edition: 6,
+  date: 1643449556326,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Blue",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Cables",
+      value: "Pink",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Visor",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #9",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/9.png",
+  dna: "ec08630385c802a6c8d788540923b0c494d9da6c",
+  edition: 9,
+  date: 1643449556372,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Pink",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Blue",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Blue",
+    },
+    {
+      trait_type: "Visor",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #34",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/34.png",
+  dna: "33e5a4ff494d579722f3ec27aaf6e7e5218d8af5",
+  edition: 34,
+  date: 1643449556418,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Common",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Rare",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #62",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/62.png",
+  dna: "617b0f7f251743a302ad47769f46285404e1935c",
+  edition: 62,
+  date: 1643449556461,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Blue",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Pink",
+    },
+    {
+      trait_type: "Cables",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Rare",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #87",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/87.png",
+  dna: "f783c9d4f79d47845069699781e2a46794b4cd4b",
+  edition: 87,
+  date: 1643449556504,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Common",
+    },
+    {
+      trait_type: "Cables",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Blue",
+    },
+    {
+      trait_type: "Visor",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "rare",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #76",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/76.png",
+  dna: "4df30350687256e2c50114d251d9b746f1dc130e",
+  edition: 76,
+  date: 1643449556546,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Blue",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Common",
+    },
+    {
+      trait_type: "Cables",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Visor",
+      value: "Pink",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #78",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/78.png",
+  dna: "66992521e34c0c3b88f52b2b83913cb64ab61718",
+  edition: 78,
+  date: 1643449556590,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Blue",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Pink",
+    },
+    {
+      trait_type: "Visor",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "rare",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #18",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/18.png",
+  dna: "e022cab7d57f101ee1bb69b4c00a1727609edd28",
+  edition: 18,
+  date: 1643449556633,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Blue",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Cables",
+      value: "Pink",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Pink",
+    },
+    {
+      trait_type: "Visor",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #71",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/71.png",
+  dna: "01704c9c2873c2195d7579094a4f49a6e26ecabc",
+  edition: 71,
+  date: 1643449556676,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Common",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Pink",
+    },
+    {
+      trait_type: "Visor",
+      value: "Pink",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #24",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/24.png",
+  dna: "d6887dd435e9df820e3c9d6e4d6cc8793ddf9e6f",
+  edition: 24,
+  date: 1643449556725,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Blue",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Common",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Blue",
+    },
+    {
+      trait_type: "Visor",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+{
+  name: "DedAstronauts #17",
+  description: "They ded",
+  image: "ipfs://QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/17.png",
+  dna: "8e574941b842ee4fb411b6f836fb73421b2eb3c1",
+  edition: 17,
+  date: 1643449556771,
+  attributes: [
+    {
+      trait_type: "Backgrounds",
+      value: "Pink",
+    },
+    {
+      trait_type: "Frame",
+      value: "Frame",
+    },
+    {
+      trait_type: "Suit",
+      value: "Yellow",
+    },
+    {
+      trait_type: "Cables",
+      value: "Common",
+    },
+    {
+      trait_type: "Helmet",
+      value: "Blue",
+    },
+    {
+      trait_type: "Visor",
+      value: "Common",
+    },
+    {
+      trait_type: "Body",
+      value: "Outline",
+    },
+    {
+      trait_type: "Monitor",
+      value: "common",
+    },
+  ],
+  compiler: "HashLips Art Engine",
+},
+];
+
+        // Transform objects into what the xrpl needs for a payload
+        
+    const transformed = data.map((nft) => {
+  return {
+    TransactionType: "NFTokenMint",
+    Account: "rfuzxnijibqiXzS3kccQ4ad3otjUYsrRJj",
+    URI: xrpl.convertStringToHex(nft.image),
+    Flags:8,
+    TokenTaxon: 0, //Required, but if you have no use for it, set to zero.
+  };
+});
+    console.log("this is trans", transformed)
+    for (const nft of transformed) {
+        const wallet = xrpl.Wallet.fromSeed(secret.value)
+	const client = new xrpl.Client("wss://xls20-sandbox.rippletest.net:51233")
+	await client.connect()
+	console.log("Connected to Sandbox")
+    const payload = {
+        TransactionType: "NFTokenMint",
+        Account: wallet.classicAddress,
+        URI: nft.URI,
+        Flags: 8,
+        TokenTaxon: 0
+    }
+    const tx = await client.submitAndWait(payload,{wallet})
+    console.log(tx)
+    client.disconnect()
+    }
+
+    console.log("DONE !!!!!!!!!!!!!!!!!!!!")
+}
+
+
+async function mintToken() {
+	const wallet = xrpl.Wallet.fromSeed(secret.value)
+	const client = new xrpl.Client("wss://xls20-sandbox.rippletest.net:51233")
+	await client.connect()
+	console.log("Connected to Sandbox")
+
+	// Note that you must convert the token URL to a hexadecimal
+	// value for this transaction.
+	// ----------------------------------------------------------
+	const transactionBlob = {
+		TransactionType: "NFTokenMint",
+		Account: wallet.classicAddress,
+		URI: xrpl.convertStringToHex(tokenUrl.value),
+		Flags: parseInt(flags.value),
+		TokenTaxon: 0 //Required, but if you have no use for it, set to zero.
+	}
+	// Submit signed blob --------------------------------------------------------
+	const tx = await client.submitAndWait(transactionBlob,{wallet})
+
+	const nfts = await client.request({
+		method: "account_nfts",
+		account: wallet.classicAddress
+	})
+	console.log(nfts)
+
+	// Check transaction results -------------------------------------------------
+	console.log("Transaction result:", tx.result.meta.TransactionResult)
+	console.log("Balance changes:",
+	  JSON.stringify(xrpl.getBalanceChanges(tx.result.meta), null, 2))
+	client.disconnect()
+} //End of mintToken
+
+//***************************
+//** Get Tokens *************
+//***************************
+
+async function getTokens() {
+	const wallet = xrpl.Wallet.fromSeed(secret.value)
+	const client = new xrpl.Client("wss://xls20-sandbox.rippletest.net:51233")
+	await client.connect()
+	console.log("Connected to Sandbox")
+	const nfts = await client.request({
+		method: "account_nfts",
+		account: wallet.classicAddress
+	})
+	console.log(nfts)
+	client.disconnect()
+} //End of getTokens
+
+//***************************
+//** Burn Token *************
+//***************************
+
+async function burnToken() {
+  const wallet = xrpl.Wallet.fromSeed(secret.value)
+  const client = new xrpl.Client("wss://xls20-sandbox.rippletest.net:51233")
+  await client.connect()
+  console.log("Connected to Sandbox")
+
+  // Prepare transaction -------------------------------------------------------
+  const transactionBlob = {
+      "TransactionType": "NFTokenBurn",
+      "Account": wallet.classicAddress,
+      "TokenID": tokenId.value
+  }
+
+  // Submit signed blob --------------------------------------------------------
+  const tx = await client.submitAndWait(transactionBlob,{wallet})
+  const nfts = await client.request({
+	method: "account_nfts",
+	account: wallet.classicAddress
+  })
+  console.log(nfts)
+  // Check transaction results -------------------------------------------------
+  console.log("Transaction result:", tx.result.meta.TransactionResult)
+  console.log("Balance changes:",
+    JSON.stringify(xrpl.getBalanceChanges(tx.result.meta), null, 2))
+  client.disconnect()
+}
+// End of burnToken()
+
+//********************************
+//** Create Sell Offer ***********
+//********************************
+
+async function createSellOffer() {
+	const wallet = xrpl.Wallet.fromSeed(secret.value)
+	const client = new xrpl.Client("wss://xls20-sandbox.rippletest.net:51233")
+	await client.connect()
+	console.log("Connected to Sandbox")
+
+ // Prepare transaction -------------------------------------------------------
+  const transactionBlob = {
+      	"TransactionType": "NFTokenCreateOffer",
+      	"Account": wallet.classicAddress,
+      	"TokenID": tokenId.value,
+      	"Amount": amount.value,
+      	"Flags": parseInt(flags.value)
+  }
+
+  // Submit signed blob --------------------------------------------------------
+
+  const tx = await client.submitAndWait(transactionBlob,{wallet})//AndWait
+
+
+  console.log("***Sell Offers***")
+  let nftSellOffers
+    try {
+	    nftSellOffers = await client.request({
+		method: "nft_sell_offers",
+		tokenid: tokenId.value
+	  })
+	  } catch (err) {
+	    console.log("No sell offers.")
+	}
+  console.log(JSON.stringify(nftSellOffers,null,2))
+  console.log("***Buy Offers***")
+  let nftBuyOffers
+  try {
+    nftBuyOffers = await client.request({
+	method: "nft_buy_offers",
+	tokenid: tokenId.value })
+  } catch (err) {
+    console.log("No buy offers.")
+  }
+  console.log(JSON.stringify(nftBuyOffers,null,2))
+
+  // Check transaction results -------------------------------------------------
+  console.log("Transaction result:",
+    JSON.stringify(tx.result.meta.TransactionResult, null, 2))
+  console.log("Balance changes:",
+    JSON.stringify(xrpl.getBalanceChanges(tx.result.meta), null, 2))
+  client.disconnect()
+  // End of createSellOffer()
+}
+//********************************
+//** Create Buy Offer ***********
+//********************************
+
+async function createBuyOffer() {
+
+	const wallet = xrpl.Wallet.fromSeed(secret.value)
+	const client = new xrpl.Client("wss://xls20-sandbox.rippletest.net:51233")
+	await client.connect()
+	console.log("Connected to Sandbox")
+
+ // Prepare transaction -------------------------------------------------------
+  const transactionBlob = {
+      	"TransactionType": "NFTokenCreateOffer",
+      	"Account": wallet.classicAddress,
+      	"Owner": owner.value,
+      	"TokenID": tokenId.value,
+      	"Amount": amount.value,
+      	"Flags": parseInt(flags.value)
+  }
+
+  // Submit signed blob --------------------------------------------------------
+  const tx = await client.submitAndWait(transactionBlob,{wallet})
+
+  console.log("***Sell Offers***")
+  let nftSellOffers
+    try {
+	    nftSellOffers = await client.request({
+		method: "nft_sell_offers",
+		tokenid: tokenId.value
+	  })
+	  } catch (err) {
+	    console.log("No sell offers.")
+	}
+  console.log(JSON.stringify(nftSellOffers,null,2))
+  console.log("***Buy Offers***")
+  let nftBuyOffers
+  try {
+    nftBuyOffers = await client.request({
+	method: "nft_buy_offers",
+	tokenid: tokenId.value })
+  } catch (err) {
+    console.log("No buy offers.")
+  }
+  console.log(JSON.stringify(nftBuyOffers,null,2))
+
+
+  // Check transaction results -------------------------------------------------
+  console.log("Transaction result:",
+    JSON.stringify(tx.result.meta.TransactionResult, null, 2))
+  console.log("Balance changes:",
+    JSON.stringify(xrpl.getBalanceChanges(tx.result.meta), null, 2))
+  client.disconnect()
+  // End of createBuyOffer()
+}
+
+//***************************
+//** Cancel Offer ***********
+//***************************
+
+async function cancelOffer() {
+
+	const wallet = xrpl.Wallet.fromSeed(secret.value)
+	const client = new xrpl.Client("wss://xls20-sandbox.rippletest.net:51233")
+	await client.connect()
+	console.log("Connected to Sandbox")
+
+	const tokenID = tokenOfferIndex.value
+	const tokenIDs = [tokenID]
+
+ // Prepare transaction -------------------------------------------------------
+  const transactionBlob = {
+      	"TransactionType": "NFTokenCancelOffer",
+      	"Account": wallet.classicAddress,
+      	"TokenIDs": tokenIDs
+  }
+
+  // Submit signed blob --------------------------------------------------------
+  const tx = await client.submitAndWait(transactionBlob,{wallet})
+
+
+  console.log("***Sell Offers***")
+  let nftSellOffers
+    try {
+	    nftSellOffers = await client.request({
+		method: "nft_sell_offers",
+		tokenid: tokenId.value
+	  })
+	  } catch (err) {
+	    console.log("No sell offers.")
+	}
+  console.log(JSON.stringify(nftSellOffers,null,2))
+  console.log("***Buy Offers***")
+  let nftBuyOffers
+  try {
+    nftBuyOffers = await client.request({
+	method: "nft_buy_offers",
+	tokenid: tokenId.value })
+  } catch (err) {
+    console.log("No buy offers.")
+  }
+  console.log(JSON.stringify(nftBuyOffers,null,2))
+
+  // Check transaction results -------------------------------------------------
+
+  console.log("Transaction result:",
+    JSON.stringify(tx.result.meta.TransactionResult, null, 2))
+  console.log("Balance changes:",
+    JSON.stringify(xrpl.getBalanceChanges(tx.result.meta), null, 2))
+
+  client.disconnect()
+  // End of cancelOffer()
+}
+//***************************
+//** Get Offers *************
+//***************************
+
+async function getOffers() {
+
+	const wallet = xrpl.Wallet.fromSeed(secret.value)
+	const client = new xrpl.Client("wss://xls20-sandbox.rippletest.net:51233")
+	await client.connect()
+	console.log("Connected to Sandbox")
+    console.log("***Sell Offers***")
+    let nftSellOffers
+      try {
+	    nftSellOffers = await client.request({
+		method: "nft_sell_offers",
+		tokenid: tokenId.value
+	  })
+	  } catch (err) {
+	    console.log("No sell offers.")
+	}
+    console.log(JSON.stringify(nftSellOffers,null,2))
+    console.log("***Buy Offers***")
+    let nftBuyOffers
+    try {
+      nftBuyOffers = await client.request({
+  	  method: "nft_buy_offers",
+	  tokenid: tokenId.value })
+    } catch (err) {
+      console.log("No buy offers.")
+  }
+  console.log(JSON.stringify(nftBuyOffers,null,2))
+  client.disconnect()
+  // End of getOffers()
+}
+//***************************
+//** Accept Sell Offer ******
+//***************************
+
+async function acceptSellOffer() {
+
+	const wallet = xrpl.Wallet.fromSeed(secret.value)
+	const client = new xrpl.Client("wss://xls20-sandbox.rippletest.net:51233")
+	await client.connect()
+	console.log("Connected to Sandbox")
+
+ // Prepare transaction -------------------------------------------------------
+  const transactionBlob = {
+      	"TransactionType": "NFTokenAcceptOffer",
+      	"Account": wallet.classicAddress,
+      	"SellOffer": tokenOfferIndex.value,
+  }
+  // Submit signed blob --------------------------------------------------------
+  const tx = await client.submitAndWait(transactionBlob,{wallet})
+  const nfts = await client.request({
+	method: "account_nfts",
+	account: wallet.classicAddress
+  })
+  console.log(JSON.stringify(nfts,null,2))
+
+  // Check transaction results -------------------------------------------------
+  console.log("Transaction result:",
+    JSON.stringify(tx.result.meta.TransactionResult, null, 2))
+  console.log("Balance changes:",
+    JSON.stringify(xrpl.getBalanceChanges(tx.result.meta), null, 2))
+  client.disconnect()
+  // End of acceptSellOffer()
+}
+//***************************
+//** Accept Buy Offer ******
+//***************************
+
+async function acceptBuyOffer() {
+
+	const wallet = xrpl.Wallet.fromSeed(secret.value)
+	const client = new xrpl.Client("wss://xls20-sandbox.rippletest.net:51233")
+	await client.connect()
+	console.log("Connected to Sandbox")
+
+ // Prepare transaction -------------------------------------------------------
+  const transactionBlob = {
+      	"TransactionType": "NFTokenAcceptOffer",
+      	"Account": wallet.classicAddress,
+      	"BuyOffer": tokenOfferIndex.value
+  }
+  // Submit signed blob --------------------------------------------------------
+  const tx = await client.submitAndWait(transactionBlob,{wallet})
+  const nfts = await client.request({
+	method: "account_nfts",
+	account: wallet.classicAddress
+  })
+  console.log(JSON.stringify(nfts,null,2))
+
+  // Check transaction results -------------------------------------------------
+  console.log("Transaction result:",
+      JSON.stringify(tx.result.meta.TransactionResult, null, 2))
+  console.log("Balance changes:",
+      JSON.stringify(xrpl.getBalanceChanges(tx.result.meta), null, 2))
+  client.disconnect()
+  // End of submitTransaction()
+}
+
+
+async function createSellOffers() {
+    const wallet = xrpl.Wallet.fromSeed(secret.value)
+    const client = new xrpl.Client("wss://xls20-sandbox.rippletest.net:51233")
+    await client.connect()
+
+
+    const nfts = await client.request({
+		method: "account_nfts",
+		account: "rPuPn48C2Z3Db5j14vzHdyq6c32UKXJAtP"
+	})
+    const tokenIDs =  nfts.result.account_nfts.map(nft => {
+        return {
+            id: nft.TokenID
+        }
+    })
+
+    // const test = [tokenIDs[0], tokenIDs[1]]
+
+    // console.log(test)
+
+    for (const tokenID of tokenIDs) {
+	    // await client.connect()
+        console.log("Connected to Sandbox")
+          const transactionBlob = {
+      	    "TransactionType": "NFTokenCreateOffer",
+      	    "Account": "rPuPn48C2Z3Db5j14vzHdyq6c32UKXJAtP",
+      	    "TokenID": tokenID.id,
+      	    "Amount": "1000000",
+      	    "Flags": 1
+         }
+
+         const tx = await client.submitAndWait(transactionBlob,{wallet})//AndWait
+         console.log('this is the tx', tx)
+           
+           
+        }
+        client.disconnect()
+
+
+    // console.log(nfts.result.account_nfts)
+    console.log("DONE!!!!!!!!")
+
+ // Prepare transaction -------------------------------------------------------
+//   const transactionBlob = {
+//       	"TransactionType": "NFTokenCreateOffer",
+//       	"Account": wallet.classicAddress,
+//       	"TokenID": tokenId.value,
+//       	"Amount": amount.value,
+//       	"Flags": parseInt(flags.value)
+//   }
+
+  // Submit signed blob --------------------------------------------------------
+
+//   const tx = await client.submitAndWait(transactionBlob,{wallet})//AndWait
+
+
+//   console.log("***Sell Offers***")
+//   let nftSellOffers
+//     try {
+// 	    nftSellOffers = await client.request({
+// 		method: "nft_sell_offers",
+// 		tokenid: tokenId.value
+// 	  })
+// 	  } catch (err) {
+// 	    console.log("No sell offers.")
+// 	}
+//   console.log(JSON.stringify(nftSellOffers,null,2))
+//   console.log("***Buy Offers***")
+//   let nftBuyOffers
+//   try {
+//     nftBuyOffers = await client.request({
+// 	method: "nft_buy_offers",
+// 	tokenid: tokenId.value })
+//   } catch (err) {
+//     console.log("No buy offers.")
+//   }
+//   console.log(JSON.stringify(nftBuyOffers,null,2))
+
+  // Check transaction results -------------------------------------------------
+//   console.log("Transaction result:",
+//     JSON.stringify(tx.result.meta.TransactionResult, null, 2))
+//   console.log("Balance changes:",
+//     JSON.stringify(xrpl.getBalanceChanges(tx.result.meta), null, 2))
+//   client.disconnect()
+  // End of createSellOffer()
+}
+</script>
+
+<title>NFToken Tester</title>
+</head>
+<body>
+<h1>NFToken Tester</h1>
+<form id="theForm">
+<p>
+<button type="button" onClick="mintToken()">Mint Token</button>&nbsp;&nbsp;
+<button type="button" onClick="mintTokens()">Mint Multiple NFTs</button>&nbsp;&nbsp;
+<button type="button" onClick="createSellOffers()">Multiple sell offers</button>&nbsp;&nbsp;
+<button type="button" onClick="getTokens()">Get Tokens</button>&nbsp;&nbsp;
+<button type="button" onClick="burnToken()">Burn Token</button>&nbsp;&nbsp;
+</p>
+<p>
+<button type="button" onClick="createSellOffer()">Create Sell Offer</button>&nbsp;&nbsp;
+<button type="button" onClick="createBuyOffer()">Create Buy Offer</button>&nbsp;&nbsp;
+<button type="button" onClick="getOffers()">Get Offers</button>
+</p>
+<p>
+<button type="button" onClick="acceptSellOffer()">Accept Sell Offer</button>&nbsp;&nbsp;
+<button type="button" onClick="acceptBuyOffer()">Accept Buy Offer</button>&nbsp;&nbsp;
+<button type="button" onClick="cancelOffer()">Cancel Offer</button>&nbsp;&nbsp;
+</p>
+<table>
+  <tr>
+    <td align="right">Account</td>
+    <td><input type="text" id="account" value="rPuPn48C2Z3Db5j14vzHdyq6c32UKXJAtP" size="40" /></td>
+  </tr>
+  <tr>
+    <td align="right">Secret</td>
+    <td><input type="text" id="secret" value="ssN4wkFWd8re2Laag4Ktrh7SR12Cm" size="40" /></td>
+  </tr>
+  <tr>
+    <td align="right">Token URL</td>
+    <td><input type="text" id="tokenUrl"
+value = "ipfs://bafybeigdyrzt5sfp7udm7hu76uh7y26nf4dfuylqabf3oclgtqy55fbzdi" size="80"/>
+    </td>
+  </tr>
+  <tr>
+    <td align="right">Flags</td>
+    <td><input type="text" id="flags" value="1" size="10"/></td>
+  </tr>
+  <tr>
+    <td align="right">Token ID</td>
+    <td><input type="text" id="tokenId" value="" size="80"/></td>
+  </tr>
+  <tr>
+    <td align="right">Amount</td>
+    <td><input type="text" id="amount" value="1000000" size="20"/></td>
+  </tr>
+  <tr>
+    <td align="right">Token Offer Index</td>
+    <td><input type="text" id="tokenOfferIndex" value="" size="80"/></td>
+  </tr>
+  <tr>
+    <td align="right">Owner</td>
+    <td><input type="text" id="owner" value="" size="80"/></td>
+  </tr>
+</table>
+</form>
+</body>
+</html>
+
+<!-- https://gateway.pinata.cloud/ipfs/QmejZCt4xD7tJKAt1qw34PkTDEyM4uvzQa4FjfUvmC9ort/16.png -->

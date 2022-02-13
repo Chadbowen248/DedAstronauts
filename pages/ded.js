@@ -5,10 +5,12 @@ import Head from "next/head";
 
 export default function DedAstronaut() {
   const [data, setAstronautData] = useState();
+  const [userNFT, setUserNFT] = useState();
   const [mint, setMint] = useState();
   const [verified, setVerified] = useState();
   const [status, setStatus] = useState({});
   const [modalIsOpen, setIsOpen] = useState(false);
+  const [xmodalIsOpen, xsetIsOpen] = useState(false);
 
   useEffect(() => {
     if (data?.uuid) {
@@ -30,33 +32,45 @@ export default function DedAstronaut() {
     }
   }, [status]);
 
+  // Close modal QR after scan
   useEffect(() => {
     if (status.opened) {
       setIsOpen(false);
     }
   }, [status]);
 
-  const getDisplayQRcode = async () => {
+  const mintDedAstronaut = async () => {
     const url = "/.netlify/functions/test";
     const response = await fetch(url);
     const data = await response.json();
     setAstronautData(data);
     setIsOpen(true);
   };
+  // const signInAndDisplay = async () => {
+  //   const url = "/.netlify/functions/signIn";
+  //   const response = await fetch(url);
+  //   const data = await response.json();
+  //   console.log(data)
+  //   setAstronautData(data);
+  //   setIsOpen(true);
+  // };
 
-  const mintNFT = async () => {
-    const url = "/.netlify/functions/mint";
-    const response = await fetch(url);
-    const data = await response.json();
-    setMint(data);
-    alert("Mint stuff will happen now, no clue rn");
-  };
+  // const mintNFT = async () => {
+  //   const url = "/.netlify/functions/mint";
+  //   const response = await fetch(url);
+  //   const data = await response.json();
+  //   setMint(data);
+  //   alert("Mint stuff will happen now, no clue rn");
+  // };
 
   const validate = async () => {
     const url = `/.netlify/functions/validate?uuid=${status?.payload_uuidv4}`;
     const response = await fetch(url);
     const data = await response.json();
     setVerified(data);
+    if (status?.signed) {
+      xsetIsOpen(true);
+    }
     console.log("heres the validation", data);
   };
 
@@ -73,31 +87,17 @@ export default function DedAstronaut() {
       <main>
         <h1>Ded Astronauts</h1>
         <h2>{`50${mint?.numberMinted || 0}/10,000 minted`}</h2>
-        {(status.opened || status.signed) && !verified?.hash && (
+        {status.opened && !verified?.verifiedPayload?.hash && (
           <h3 className="verified">REVIEW AND SIGN WITH XUMM</h3>
         )}
         {status.signed === false && <h3 className="declined">SIGN DECLINED</h3>}
-        {verified?.hash && (
-          <div className="status-container">
-            <h3 className="verified">
-              SIGN VERIFIED - READY TO MINT
-              </h3>
-              <span>
-                <a target="_blank" href={`https://xrpscan.com/tx/${verified?.hash}`}>View TX</a>
-              </span>
-     
-          </div>
-        )}
+
         <div className="preview-container">
           <img src="/preview.gif" style={{ width: "70%" }}></img>
-          {(status.signed === undefined || status.signed === false) && (
-            <button onClick={() => getDisplayQRcode()}>Get XUMM QR Code</button>
-          )}
-          {status.signed === true && verified?.hash && (
-            <button onClick={() => mintNFT()}>Mint</button>
-          )}
+          <button onClick={() => mintDedAstronaut()}>
+            Mint a Ded Astronaut!
+          </button>
         </div>
-        {/* <button onClick={() => validate()}>verify</button> */}
         {Modal.setAppElement("#__next")}
         <Modal
           isOpen={modalIsOpen}
@@ -116,9 +116,37 @@ export default function DedAstronaut() {
         >
           <div className="info-modal">
             <img src={data?.refs?.qr_png} id="QRcode"></img>
-
-            <p>Scan this code with the Xumm app to sign the transaction.</p>
-            <p>Amount: 50 XRP</p>
+            <p>Scan this code with the Xumm app to mint a Ded Astronaut.</p>
+            <p>Amount: 33 XRP</p>
+          </div>
+        </Modal>
+        <Modal
+          isOpen={xmodalIsOpen}
+          onRequestClose={() => xsetIsOpen(false)}
+          overlayClassName={{
+            base: "xoverlay-base",
+            afterOpen: "xoverlay-after",
+            beforeClose: "xoverlay-before",
+          }}
+          className={{
+            base: "xcontent-base",
+            afterOpen: "xcontent-after",
+            beforeClose: "xcontent-before",
+          }}
+          closeTimeoutMS={500}
+        >
+          <div className="info-modal freshnft">
+            {/* <img src={data?.refs?.qr_png} id="QRcode"></img> */}
+            <h1>MINTED!</h1>
+            <img src={data?.freshMint.formattedURI}></img>
+            <span>
+              <a
+                target="_blank"
+                href={`https://xrpscan.com/tx/${verified?.hash}`}
+              >
+                View TX
+              </a>
+            </span>
           </div>
         </Modal>
       </main>

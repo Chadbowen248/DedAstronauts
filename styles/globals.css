@@ -15,7 +15,7 @@ body {
 img {
   width: 80%;
 }
-.overlay-base {
+.overlay-base, .xoverlay-base {
   padding: 1rem;
   position: fixed;
   top: 0;
@@ -33,17 +33,24 @@ img {
   align-items: center;
 }
 
-.overlay-after {
+.overlay-after, .xoverlay-after {
   background-color: rgba(0, 0, 0, 0.8);
   opacity: 1;
 }
+.freshnft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-.overlay-before {
+}
+
+
+.overlay-before, .xoverlay-before {
   background-color: rgba(0, 0, 0, 0);
   opacity: 0;
 }
 
-.content-base {
+.content-base, .xcontent-base {
   position: relative;
   
   top: auto;
@@ -66,7 +73,7 @@ img {
 
 p { color: black}
 
-.content-after {
+.content-after, .xcontent-after {
   width: 50%;
   display: block;
   max-width: 350px;
