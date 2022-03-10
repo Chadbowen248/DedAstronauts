@@ -7,7 +7,7 @@ exports.handler = async function (event, context, callback) {
   await client.connect();
   const nfts = await client.request({
     method: "account_nfts",
-    account: "rPuPn48C2Z3Db5j14vzHdyq6c32UKXJAtP",
+    account: "rJbk4K8xeiwRap3JJpmXSYwRkCFocQyFvS",
   });
 
   // maybe make this random
@@ -33,7 +33,7 @@ exports.handler = async function (event, context, callback) {
   }
   const request = {
     TransactionType: "NFTokenAcceptOffer",
-    Account: "rPuPn48C2Z3Db5j14vzHdyq6c32UKXJAtP",
+    Account: "rJbk4K8xeiwRap3JJpmXSYwRkCFocQyFvS",
     SellOffer: tokenIndex, // this comes from the index value from the nft array offer on the ded account
   };
 

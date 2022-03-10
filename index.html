@@ -4321,7 +4321,7 @@ const mintTokens = async () => {
     const transformed = data.map((nft) => {
   return {
     TransactionType: "NFTokenMint",
-    Account: "rfuzxnijibqiXzS3kccQ4ad3otjUYsrRJj",
+    Account: "rJbk4K8xeiwRap3JJpmXSYwRkCFocQyFvS",
     URI: xrpl.convertStringToHex(nft.image),
     Flags:8,
     TokenTaxon: 0, //Required, but if you have no use for it, set to zero.
@@ -4707,7 +4707,7 @@ async function createSellOffers() {
 
     const nfts = await client.request({
 		method: "account_nfts",
-		account: "rPuPn48C2Z3Db5j14vzHdyq6c32UKXJAtP"
+		account: "rJbk4K8xeiwRap3JJpmXSYwRkCFocQyFvS"
 	})
     const tokenIDs =  nfts.result.account_nfts.map(nft => {
         return {
@@ -4724,7 +4724,7 @@ async function createSellOffers() {
         console.log("Connected to Sandbox")
           const transactionBlob = {
       	    "TransactionType": "NFTokenCreateOffer",
-      	    "Account": "rPuPn48C2Z3Db5j14vzHdyq6c32UKXJAtP",
+      	    "Account": "rJbk4K8xeiwRap3JJpmXSYwRkCFocQyFvS",
       	    "TokenID": tokenID.id,
       	    "Amount": "1000000",
       	    "Flags": 1
@@ -4812,11 +4812,11 @@ async function createSellOffers() {
 <table>
   <tr>
     <td align="right">Account</td>
-    <td><input type="text" id="account" value="rPuPn48C2Z3Db5j14vzHdyq6c32UKXJAtP" size="40" /></td>
+    <td><input type="text" id="account" value="rJbk4K8xeiwRap3JJpmXSYwRkCFocQyFvS" size="40" /></td>
   </tr>
   <tr>
     <td align="right">Secret</td>
-    <td><input type="text" id="secret" value="ssN4wkFWd8re2Laag4Ktrh7SR12Cm" size="40" /></td>
+    <td><input type="text" id="secret" value="snPyLpFuUoT65igLprRGegX7vGXXt" size="40" /></td>
   </tr>
   <tr>
     <td align="right">Token URL</td>

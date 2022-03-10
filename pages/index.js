@@ -31,7 +31,7 @@ export default function Home() {
           <h2>How this works:</h2>
           <ul>
             <li>If you don't already have a XUMM account, download from the App or Play store and follow the registration process. Please note you will need at least 10 XRP to activate your account. For more info please see <a href="#">Xumm</a></li>
-            <li>Sign a request sending 50 XRP to the DedAstronaut wallet by clicking on the "Get Xumm QR code" button and scanning the code with the Xumm app.</li>
+            <li>Accept a offer request for 1 Ded Astronaut a accept offer request sending 33 XRP to the DedAstronaut wallet by clicking on the "Get Xumm QR code" button and scanning the code with the Xumm app.</li>
             <li>Review and approve the request on the Xumm app.</li>
             <li>You can now mint a unique Ded Astronauts NFT to your xrpl address by clicking on the "Mint" button and scanning the QR code with Xumm.</li>
           </ul>
