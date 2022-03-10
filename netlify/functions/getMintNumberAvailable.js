@@ -5,7 +5,7 @@ exports.handler = async function () {
   await client.connect();
   const nfts = await client.request({
     method: "account_nfts",
-    account: "rPuPn48C2Z3Db5j14vzHdyq6c32UKXJAtP",
+    account: "rJbk4K8xeiwRap3JJpmXSYwRkCFocQyFvS",
   });
 
   return {
